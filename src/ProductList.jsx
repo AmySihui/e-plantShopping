@@ -308,6 +308,10 @@ function ProductList({ onHomeClick }) {
     }));
   };
 
+  const handleCheckoutShopping = () => {
+    alert("Functionality to be added for future reference");
+  };
+
   return (
     <div>
       <div className="navbar" style={styleObj}>
