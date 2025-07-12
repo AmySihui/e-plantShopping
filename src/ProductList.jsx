@@ -12,8 +12,8 @@ function ProductList({ onHomeClick }) {
   const cartItems = useSelector((state) => state.cart.items);
 
   const calculateTotalQuantity = () => {
-    return CartItems
-      ? CartItems.reduce((total, item) => total + item.quantity, 0)
+    return cartItems
+      ? cartItems.reduce((total, item) => total + item.quantity, 0)
       : 0;
   };
 
@@ -335,7 +335,7 @@ function ProductList({ onHomeClick }) {
           <div>
             {" "}
             <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
-              <h1 className="cart">
+              <h1 className="cart" style={{ position: "relative" }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
@@ -356,6 +356,9 @@ function ProductList({ onHomeClick }) {
                     id="mainIconPathAttribute"
                   ></path>
                 </svg>
+                <span className="cart_quantity_count">
+                  {calculateTotalQuantity()}
+                </span>
               </h1>
             </a>
           </div>
